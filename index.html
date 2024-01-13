@@ -293,6 +293,7 @@ img#impresoraButton {
         //crea una lista de cada columna a partir de las comas.
         cantidades = cantidades.split(",");
         descripciones = descripciones.split(",");
+        detalle = detalle.split(",");
         p_units = p_units.split(",");
 
         //Crea una lista para mostrar en cada fila de la tabla
@@ -302,7 +303,7 @@ img#impresoraButton {
             result[id] = {
                 cantidad: cantidades[id],
                 descripcion: descripciones[id], // + " " + detalles[id], // Descomenta si deseas concatenar la descripción con el detalle
-         
+                detalle: detalle[id],
                 subtotal: subtotal[id],
                 precio_unit: parseFloat(p_units[id]).toFixed(2),
               
@@ -316,13 +317,13 @@ img#impresoraButton {
          <div class="button-box">
   <!-- Botón de WhatsApp con ícono -->
   <a href="#" id="impresoraButton">
-   <img class="boton" src="Print.png" class="ImganelLogo" width= "60%" id "foto">
+  <img class="boton" src="Print.png" class="ImganelLogo" width= "60%" id "foto">
   </a>
   
   <!-- Botón existente de WhatsApp -->
   
   <a href="#" id="whatsappButton">
-   <img class="boton" src="wsp.png" class="ImganelLogo" width= "60%" id "foto">
+  <img class="boton" src="wsp.png" class="ImganelLogo" width= "60%" id "foto">
   </a>
     </div>
   </div>
@@ -333,7 +334,7 @@ img#impresoraButton {
         <div id="thermal-pos">
         
         <div class="label">
-             <<img class="boton" src="Evergreen.png" class="ImganelLogo" width= "60%" id "foto">
+             <img class="boton" src="Evergreen.png" class="ImganelLogo" width= "60%" id "foto">
             <br/>
             <p class="info-tienda">
                 Salaverry 193 , Miraflores
@@ -377,7 +378,8 @@ img#impresoraButton {
             <tbody id="tablaBody">
                 <tr class="table-header">
     <th><h2>Cant</h2></th>
-    <th><h2>Descripcion____</h2></th>
+    <th><h2>Descripcon</h2></th>
+
     <th><h2>Precio</h2></th>
     <th><h2>Subtotal</h2></th> <!-- Nueva columna para Subtotal -->
                  </tr>
@@ -402,6 +404,7 @@ img#impresoraButton {
         
        <td class="item" style="text-align: right;">${row.cantidad}</td>
         <td class="item" style="text-align: right;">${row.descripcion}</td>
+
         <td class="item" style="text-align: right;">${row.precio_unit}</td> <!-- Alinea a la derecha -->
         <td class="item" style="text-align: right;">${subtotal.toFixed(2)}</td> <!-- Alinea a la derecha -->
     `;
@@ -470,7 +473,7 @@ document.getElementById('impresoraButton').addEventListener('click', printTicket
     
 
                 <tr class="table-footer top-line">
-                    <td class="" colspan="3"><h2>Total Venta:</h2></td>
+                    <td class="" colspan="3">Total Venta:</td>
                     <td colspan="3"><h2 id="total"></h2></td>
                 </tr>
                 <tr class="table-footer">
@@ -489,7 +492,11 @@ document.getElementById('impresoraButton').addEventListener('click', printTicket
                     <td colspan="3"><h2 id="a_cuenta"></h2></td>
                     
                 </tr>
-                  
+                  <tr class="table-footer">
+                    <td colspan="3"><h2>A cuenta 2:</h2></td>
+                    <td colspan="3"><h2 id="a_cuenta_dos"></h2></td>
+                    
+                </tr>
                 
                 <tr class="table-footer">
                     <td colspan="3"><h2>SubTotal:</h2></td>
