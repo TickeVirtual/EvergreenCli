@@ -293,7 +293,6 @@ img#impresoraButton {
         //crea una lista de cada columna a partir de las comas.
         cantidades = cantidades.split(",");
         descripciones = descripciones.split(",");
-        detalle = detalle.split(",");
         p_units = p_units.split(",");
 
         //Crea una lista para mostrar en cada fila de la tabla
@@ -303,7 +302,7 @@ img#impresoraButton {
             result[id] = {
                 cantidad: cantidades[id],
                 descripcion: descripciones[id], // + " " + detalles[id], // Descomenta si deseas concatenar la descripción con el detalle
-                detalle: detalle[id],
+         
                 subtotal: subtotal[id],
                 precio_unit: parseFloat(p_units[id]).toFixed(2),
               
