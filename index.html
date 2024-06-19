@@ -204,6 +204,22 @@
         font-weight: normal; /* Agrega esta línea para desactivar la negrita */
         
       }
+
+  .imagen-contenedor {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Ajusta según sea necesario */
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: none; /* Ocultar imágenes por defecto */
+        }
+
+
+
+
       
       .align-right {
             text-align: right;
@@ -534,17 +550,18 @@ document.getElementById('impresoraButton').addEventListener('click', printTicket
             <p class="policy-title">
                 <b>
                 
-                    Gracias por confiar en nosotros4</b>
+                    Gracias por confiar en nosotros5</b>
             </p>
     
         
 
     </div>
 
-<div class="label">
+ <div class="imagen-contenedor">
     <img id="fiestas" src="fiestas.png" alt="FIESTAS" width= "60%" style="display:none;">
     <img id="navidad" src="navidad.png" alt="NAVIDAD" width= "60%" style="display:none;">
-         
+ </div>
+              
 
     <script>
         // Obtener la fecha actual
