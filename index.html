@@ -538,6 +538,45 @@ document.getElementById('impresoraButton').addEventListener('click', printTicket
         
 
     </div>
+
+
+    <img id="fiestas" src="fiestas.png" alt="FIESTAS" width= "60%" style="display:none;">
+    <img id="navidad" src="navidad.png" alt="NAVIDAD" width= "60%" style="display:none;">
+              
+
+    <script>
+        // Obtener la fecha actual
+        const hoy = new Date();
+        const mes = hoy.getMonth() + 1; // Los meses en JavaScript son de 0-11
+        const dia = hoy.getDate();
+
+        // Función para verificar si la fecha está en un rango específico (ignorando el año)
+        function estaEnRango(inicio, fin) {
+            const [inicioDia, inicioMes] = inicio.split('-').map(Number);
+            const [finDia, finMes] = fin.split('-').map(Number);
+
+            const inicioFecha = new Date(hoy.getFullYear(), inicioMes - 1, inicioDia);
+            const finFecha = new Date(hoy.getFullYear(), finMes - 1, finDia);
+
+            const inicioMesDia = new Date(0, inicioMes - 1, inicioDia);
+            const finMesDia = new Date(0, finMes - 1, finDia);
+
+            const hoyMesDia = new Date(0, mes - 1, dia);
+
+            return hoyMesDia >= inicioMesDia && hoyMesDia <= finMesDia;
+        }
+
+        // Mostrar la imagen adecuada según la fecha (ignorando el año)
+        if (estaEnRango('01-06', '30-06')) {
+            document.getElementById('fiestas').style.display = 'block';
+        } else if (estaEnRango('01-12', '30-12')) {
+            document.getElementById('navidad').style.display = 'block';
+        }
+    </script>
+
+              
+              
+              
     <script>
         var nroBoletaElement = document.getElementById("nro_boleta_id").textContent = nro_boleta;
         var fechaElement = document.getElementById("fecha").textContent = fecha;
