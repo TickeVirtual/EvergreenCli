@@ -189,6 +189,18 @@
         text-align: left;
       }
 
+    .saludo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Ajusta según sea necesario */
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: none; /* Ocultar imágenes por defecto */
+        }
+
    
 
       .policy {
@@ -539,14 +551,14 @@ document.getElementById('impresoraButton').addEventListener('click', printTicket
             <p class="policy-title">
                 <b>
                 
-                    Gracias por confiar en nosotros5</b>
+                    Gracias por confiar en nosotros6</b>
             </p>
     
         
 
     </div>
 
- <div class="imagen-contenedor">
+ <div class="saludo">
     <img id="fiestas" src="fiestas.png" alt="FIESTAS" width= "60%" style="display:none;">
     <img id="navidad" src="navidad.png" alt="NAVIDAD" width= "60%" style="display:none;">
  </div>
